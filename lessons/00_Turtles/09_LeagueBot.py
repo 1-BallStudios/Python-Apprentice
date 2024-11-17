@@ -17,4 +17,21 @@ screen.bgcolor('white')
 
 t = turtle.Turtle()
 
-... # Your Code Here
+def set_turtle_image(turtle, image_name):
+    """Set the turtle's shape to a custom image."""
+
+    from pathlib import Path
+    image_dir = Path(__file__).parent / "images"
+    image_path = str(image_dir / image_name)
+
+    screen = turtle.getscreen()
+    screen.addshape(image_path)
+    turtle.shape(image_path)
+
+set_turtle_image(t, "leaguebot_bolt.gif")
+t.turtlesize(stretch_wid=10, stretch_len=10, outline=1)
+t.pencolor('blue')
+for i in range(6):
+    t.forward(150)                       # Move tina forward by the forward distance
+    t.left(60)
+turtle.done()
