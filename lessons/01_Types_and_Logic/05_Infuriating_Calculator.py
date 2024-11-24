@@ -21,20 +21,27 @@ you can ask for a string with simpledialog.askstring().
 
 """
 
-# Import the required modules
+from tkinter import messagebox, simpledialog, Tk # import required modules
 
-# Create a window object
+window = Tk()     # Create a window object
+window.withdraw() # Hide the window; we just want to see pop ups
 
-# Hide the window, hint: use the withdraw method
+num1 =  simpledialog.askfloat("First Number", "What is your first number?")
 
-# Ask the user for the first number   
+num2 =  simpledialog.askfloat("Second Number", "What is your second number?")
 
-# Ask the user for the second number
+operation =  simpledialog.askstring("Operation", "What is the operation")
 
-# Ask the user for the math operation
-
-# Use if-elif-else statements to provide the desired math operation on the numbers and display the result.
-
+if operation == "+":
+    messagebox.showinfo('calc', str(num1+num2))
+elif operation == "-":
+    messagebox.showinfo('calc', str(num1-num2))
+elif operation == "*":
+    messagebox.showinfo('calc', str(num1*num2))
+elif operation == "/":
+    messagebox.showinfo('calc', str(num1/num2))
+else:
+    messagebox.showerror()
 # If the user enters an unknown operation, display an error message. ( use messagebox.showerror()
 
-# Keep the window open
+window.mainloop()
