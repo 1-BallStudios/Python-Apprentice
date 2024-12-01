@@ -40,8 +40,24 @@ def ask_integer(prompt):
         except ValueError:
             print("Please enter a valid number!")
 
+n=7
+p=7
 
-# Pick the random number
+while n%7==0:
+    n = random.randint(1,100)
+while n!=p:
+    p = ask_integer("What's your number: ")
+    if p%7==0:
+        print("that is a very bad number, starting over")
+        n=7
+        while n%7==0:
+            n = random.randint(1,100)
+    elif p>n:
+        print("too high!")
+    elif p<n:
+        print("too low!")
+    else:
+        print("cool number!")
 
 # In your loop:
 
@@ -52,5 +68,3 @@ def ask_integer(prompt):
     # If the user's guess is too high, tell the user
     # If the user's guess is too low, tell the user
     # If the user's guess is correct, tell the user and break out of the loop
-
-

@@ -31,15 +31,8 @@ from guizero import App, Box, Text
 
 app = App("Numbers Grid", layout="grid")
 
-# Create a 10x10 grid using nested loops
-# Or you can use a single loop and calculate the row and column
-
-# In the loop, calculate or increment the number
-
-# Use % determing the display, using fizzbuzz rules
-
-# If you are displaying a number, calculate the sum of the digits and determine the color
-
-# Call Text(app, text='...', grid=[col, row], color=...) to display something. 
+for i in range(10):
+    for j in range(10):
+        Text(app, text=str(j*10+i+1), grid=[i+1, j+1], color="black")
 
 app.display()

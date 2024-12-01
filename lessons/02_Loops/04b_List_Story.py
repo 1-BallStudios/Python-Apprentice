@@ -1,4 +1,4 @@
-"""
++"""
 Use the words in the list to create a story. 
 
 Use indexing to get words from the list, then 
@@ -14,4 +14,4 @@ story = []
 # Create a story using the words in the list
 
 # Display the story to the user
-print(' '.join(story))
+print('hi'.join(story))
