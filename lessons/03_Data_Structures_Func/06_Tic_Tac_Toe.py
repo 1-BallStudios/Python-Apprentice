@@ -15,7 +15,15 @@ def check_row(l):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
         """
-
+    for row in l:
+        if row[0] == row[1] == row[2]:
+            if row[0] == X_MARK:
+                return X_MARK
+            elif row[0] == O_MARK:
+                return O_MARK
+            else:
+                pass
+ 
     return None
 
 def check_win(board):
@@ -27,7 +35,7 @@ def check_win(board):
         The winner's token ( x or o ) if there is one, otherwise None
     """
 
-    return None
+    return check_row(board)
 
 # The following code is the main part of the program. It creates a GUI for the
 # game and handles the game logic. Implement the functions above first, then
@@ -47,7 +55,7 @@ class TicTacToe:
     def __init__(self, win_func=check_win):
         self.board = None # The stoage for user's markers
         
-        self.app = App('Tic Tac Toe Game', bg='burlywood')
+        self.app = App('Tic Tac Toe Game', bg='white')
         self.board_pane = Box(self.app, layout='grid') # Holds UI elements for the board     
         self.message = Text(self.app, text="It is your turn, " + self.current_turn)
 
