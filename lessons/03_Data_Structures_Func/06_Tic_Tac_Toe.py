@@ -34,8 +34,30 @@ def check_win(board):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
     """
+    transposed = list(zip(*board))
+    if check_row(board) != None:
+        return check_row(board)
+    elif check_row(transposed) != None:
+        return check_row(transposed)
+    else:
+        if board[0][0] == board[1][1] == board[2][2]:
+            if board[0][0] == X_MARK:
+                return X_MARK
+            elif board[0][0] == O_MARK:
+                return O_MARK
+            else:
+                pass
+        else:
+            if board[2][0] == board[1][1] == board[0][2]:
+                if board[2][0] == X_MARK:
+                    return X_MARK
+                elif board[2][0] == O_MARK:
+                    return O_MARK
+                else:
+                    pass
 
-    return check_row(board)
+    return None
+
 
 # The following code is the main part of the program. It creates a GUI for the
 # game and handles the game logic. Implement the functions above first, then
