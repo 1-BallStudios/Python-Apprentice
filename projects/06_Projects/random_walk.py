@@ -59,7 +59,9 @@ def random_walk(walker, steps):
     #
     # Read one of the past turtle programs to see how to use these methods.
 
-    # Your code here
+    angle = random.choice([0, 90, 180, 270])
+    walker.setheading(angle)
+    walker.forward(steps)
 
 
 
