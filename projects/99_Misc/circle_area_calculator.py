@@ -19,11 +19,8 @@ my_turtle.circle(radius=radius, extent=360, steps=50)  # ;
 # Call the turtle .penup() method
 my_turtle.penup()  # ;
 
-# Move your turtle to a new x,y position using .goto()
-my_turtle.goto(0, 0)  # ;
 
-# Calculate the area of your circle and store it in a variable, you can use math.pi
-area = math.pi * radius * radius  # ;
+    area = math.pi * radius * radius  # ;
 
 # Write the area of your circle using the turtle .write() method
 # my_turtle.write(arg="area = " + str(area), move=True, align='left', font=('Arial',8,'normal'))
