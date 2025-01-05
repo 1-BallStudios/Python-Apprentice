@@ -17,7 +17,7 @@ for i in range(10):
 
     if number == random_num:
         sys.exit(0)
-elif number >= random_num:
+    elif number >= random_num:
         messagebox.showinfo("High or Low", "Too High!")
     elif number <= random_num:
         messagebox.showinfo("High or Low", "Too Low!")

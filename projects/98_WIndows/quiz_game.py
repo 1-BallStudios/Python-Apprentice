@@ -7,32 +7,6 @@ window = Tk()  # ;
 window.withdraw()  # ;
 
 # 1. Create a variable to hold the user's score. Set it equal to zero.
-score = 0  # ;
-
-response = simpledialog.askstring(None, "Which is better, Python or Java?")  # ;
-
-if response.lower() == "python":  # ;
-    score += 1  # ;
-    print("Correct! Your score is " + str(score))  # ;
-else:  # ;
-    score -= 1  # ;
-    messagebox.showerror(message="WRONG! It's Python of course!")  # ;
-
-messagebox.showinfo(message="Your final score is " + str(score))  # ;
-# ASK A QUESTION AND CHECK THE ANSWER
-
-# // 2. Ask the user a question
-
-# // 3. Use an if statement to check if their answer is correct
-
-# // 4. if the user's answer was correct, add one to their score
-
-# MAKE MORE QUESTIONS. Ask more questions by repeating the above
-# // Option: Subtract a point from their score for a wrong answer
-
-# After all the questions have been asked, tell the user their final score
-# remember to convert your score variable to a string using the str() function
-
 
 score = 0  # ;
 
