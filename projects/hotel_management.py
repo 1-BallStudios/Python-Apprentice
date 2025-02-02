@@ -22,8 +22,7 @@ guests = dict()
 for i in range (50):
     rooms.append("Empty")
     nights.append("")
-
-print(guests)
+    guests[str(i+1)] = "NONE"
 
 window = Tk()
 window.title("Hotel Management")
@@ -41,10 +40,16 @@ def CIG():
             guests[str(room)] = name
 
 def COG():
-    room = simpledialog.askinteger("Check Out Guest", "enter a room (1-50)")
-    if room > 0 and room < 51 and rooms[room-1] == "Full":
-        rooms[room-1] = "Empty"
-        messagebox.showinfo("Check Out Guest", guests[str(room)] + " is charged $" + str(50 * int(nights[room-1])))
+    room = simpledialog.askstring("Check Out Guest", "enter name")
+    #if room > 0 and room < 51 and rooms[room-1] == "Full":
+    rooms[room-1] = "Empty"
+    cost = 0
+    for i in range(50):
+        if guests[str(i+1)] == guests[str(room)]:
+            cost += 50 * int(nights[i])
+            nights[i] = ""
+            guests[str(i)] = "NONE"
+        messagebox.showinfo("Check Out Guest", guests[str(room)] + " is charged $" + str(cost))
 
 
 button1 = tkinter.Button(window, text="Check In Guest",font=("Arial",18),command=CIG)
