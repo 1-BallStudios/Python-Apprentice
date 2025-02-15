@@ -40,8 +40,8 @@ def CIG():
             guests[str(room)] = name
 
 def COG():
-    room = simpledialog.askstring("Check Out Guest", "enter name")
-    #if room > 0 and room < 51 and rooms[room-1] == "Full":
+    room = simpledialog.askinteger("Check Out Guest", "enter room")
+    if room > 0 and room < 51 and rooms[room-1] == "Full":
     rooms[room-1] = "Empty"
     cost = 0
     for i in range(50):
